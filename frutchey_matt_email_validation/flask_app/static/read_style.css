@@ -1,0 +1,28 @@
+* {
+    font-family: 'Merriweather', serif;;
+}
+
+#wrapper {
+    width: 1000px;
+    margin: 0px auto;
+}
+
+h1 {
+    text-align: center;
+    padding: 20px;
+}
+
+#back_button {
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    padding: 10px;
+}
+
+#table_links{
+    font-size: 14px;
+}
+
+#delete_btn{
+    color: red
+}

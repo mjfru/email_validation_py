@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='show_one_style.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+    <title>Viewing User {{ user.first_name }}</title>
+</head>
+<body>
+    <h1>{{ user.first_name }}'s Information</h1>
+    <div id="user_info">
+        <p>Full Name: {{ user.first_name }} {{ user.last_name }}</p>
+        <p>Email: {{ user.email }}</p>
+        <p>Created On: {{ user.created_at.strftime("%a %b %d %Y %X") }} </p>
+        <p>Updated On: {{ user.updated_at.strftime("%a %b %d %Y %X") }}</p>
+        <div id="links">
+            <a href="/read_all" class="btn btn-info btn-sm">Home</a>
+            <a href="/user/edit/{{ user.id }}" class="btn btn-secondary btn-sm">Edit</a>
+            <a href="/user/delete/{{ user.id }}" class="btn btn-danger btn-sm">Delete</a>
+        </div>
+    </div>
+</body>
+</html>
